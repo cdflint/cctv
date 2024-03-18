@@ -1,10 +1,11 @@
 <style>
   #unmuteButton {
     background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_South_Carolina.svg/1200px-Flag_of_South_Carolina.svg.png") no-repeat;
+    background-size: cover;
     cursor: pointer;
     border: none;
     height: 200px;
-    width: 200px;
+    width: 300px;
   }
 </style>
 
@@ -34,7 +35,7 @@
   function playSound(url) {
     console.log('Playing Sound');
     const audio = new Audio(url);
-    //audio.muted = true; // without this line it's not working although I have "muted" in HTML
+    audio.muted = false; // without this line it's not working although I have "muted" in HTML
     audio.play();
   }
 

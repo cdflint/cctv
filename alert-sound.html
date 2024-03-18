@@ -1,20 +1,25 @@
 <script>
+  var loc = window.location.toString(),
+      audio = document.getElementById('audio');
+
   var queryString = window.location.search;
   var urlParams = new URLSearchParams(queryString);
   //var url = urlParams.get('url');
   var url = 'https://soundbible.com/mp3/Airhorn-SoundBible.com-975027544.mp3';
   var sts = urlParams.get('sts');
 
-  function playSound(url) {
+  function playSound(url, e) {
+    e.preventDefault();
     const audio = new Audio(url);
     audio.play();
   }
 
-  if (sts == 'Alert') {
+  if (sts === 'Alert') {
     playSound(url);
   }, 1000;
 </script>
 
 <div>
   <img height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_South_Carolina.svg/1200px-Flag_of_South_Carolina.svg.png" alt="">
+  <audio controls id='audio'></audio>
 </div>

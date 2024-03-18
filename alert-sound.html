@@ -9,14 +9,14 @@
   var url = 'https://soundbible.com/mp3/Airhorn-SoundBible.com-975027544.mp3';
   var sts = urlParams.get('sts');
 
-  var evt = new MouseEvent('click', {
-    view: window,
-    bubbles: true,
-    cancelable: true,
-    clientX: 20,
+  // One-liner to resume playback when user interacted with the page.
+  document.querySelector('button').addEventListener('click', function() {
+    context.resume().then(() => {
+      console.log('Playback resumed successfully');
+    });
   });
-  button.dispatchEvent(evt);
 
+  document.getElementById('unmuteButton').dispatchEvent(new MouseEvent('click')); 
 
   function playSound(url) {
     console.log('Playing Sound');
@@ -29,13 +29,6 @@
     playSound(url);
     console.log('Alert Triggered');
   };
-
-  // One-liner to resume playback when user interacted with the page.
-  document.querySelector('button').addEventListener('click', function() {
-    context.resume().then(() => {
-      console.log('Playback resumed successfully');
-    });
-  });
 </script>
 
 <div>

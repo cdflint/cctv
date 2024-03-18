@@ -9,14 +9,7 @@
   var url = 'https://soundbible.com/mp3/Airhorn-SoundBible.com-975027544.mp3';
   var sts = urlParams.get('sts');
 
-  // One-liner to resume playback when user interacted with the page.
-  button.addEventListener('click', function() {
-    context.resume().then(() => {
-      console.log('Playback resumed successfully');
-    });
-  });
 
-  button.dispatchEvent(new MouseEvent('click')); 
 
   function playSound(url) {
     console.log('Playing Sound');
@@ -26,6 +19,7 @@
   }
 
   if (sts == 'Alert') {
+    button.dispatchEvent(new MouseEvent('click'));
     playSound(url);
     console.log('Alert Triggered');
   };
@@ -33,6 +27,14 @@
 
 <div>
   <img height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_South_Carolina.svg/1200px-Flag_of_South_Carolina.svg.png" alt="">
+  <audio controls id='audio'></audio>
   <button styel="display: none;" id="unmuteButton"></button>
-  <!--<audio controls id='audio'></audio>-->
 </div>
+<script>
+  unmuteButton.addEventListener('click', function() {
+    audio.muted = false;
+    audio.volume = 0.2;
+    audio.src = 'https://soundbible.com/mp3/Airhorn-SoundBible.com-975027544.mp3';
+    audio.play();
+  });
+</script>

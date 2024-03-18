@@ -35,7 +35,7 @@
   function playSound(url) {
     console.log('Playing Sound');
     const audio = new Audio(url);
-    audio.muted = false; // without this line it's not working although I have "muted" in HTML
+    //audio.muted = false; // without this line it's not working although I have "muted" in HTML
     audio.play();
   }
 
@@ -44,5 +44,9 @@
     playSound(url);
     console.log('Alert Triggered');
   };
+
+  window.addEventListener('load', function() {
+    button.dispatchEvent(new MouseEvent('click'));
+  });
 
 </script>

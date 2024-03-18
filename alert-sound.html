@@ -10,7 +10,7 @@
   var sts = urlParams.get('sts');
 
   // One-liner to resume playback when user interacted with the page.
-  document.querySelector('button').addEventListener('click', function() {
+  document.querySelector(button).addEventListener('click', function() {
     context.resume().then(() => {
       console.log('Playback resumed successfully');
     });
@@ -33,6 +33,6 @@
 
 <div>
   <img height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_South_Carolina.svg/1200px-Flag_of_South_Carolina.svg.png" alt="">
-  <button display='none' id="unmuteButton"></button>
+  <button styel="display: none;" id="unmuteButton"></button>
   <!--<audio controls id='audio'></audio>-->
 </div>

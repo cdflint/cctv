@@ -9,6 +9,7 @@
   var sts = urlParams.get('sts');
 
   function playSound(url) {
+    console.log('Playing Sound');
     const audio = new Audio(url);
     audio.play();
   }

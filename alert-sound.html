@@ -1,4 +1,10 @@
+<div>
+  <img height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_South_Carolina.svg/1200px-Flag_of_South_Carolina.svg.png" alt="">
+  <audio controls id='audio'></audio>
+  <button styel="display: none;" id="unmuteButton"></button>
+</div>
 <script>
+
   var loc = window.location.toString(),
       audio = document.getElementById('audio'),
       button = document.getElementById('unmuteButton');
@@ -9,12 +15,17 @@
   var url = 'https://soundbible.com/mp3/Airhorn-SoundBible.com-975027544.mp3';
   var sts = urlParams.get('sts');
 
-
+  unmuteButton.addEventListener('click', function() {
+    audio.muted = false;
+    audio.volume = 0.2;
+    audio.src = 'https://soundbible.com/mp3/Airhorn-SoundBible.com-975027544.mp3';
+    audio.play();
+  });
 
   function playSound(url) {
     console.log('Playing Sound');
     const audio = new Audio(url);
-    audio.muted = true; // without this line it's not working although I have "muted" in HTML
+    //audio.muted = true; // without this line it's not working although I have "muted" in HTML
     audio.play();
   }
 
@@ -23,18 +34,5 @@
     playSound(url);
     console.log('Alert Triggered');
   };
-</script>
 
-<div>
-  <img height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_South_Carolina.svg/1200px-Flag_of_South_Carolina.svg.png" alt="">
-  <audio controls id='audio'></audio>
-  <button styel="display: none;" id="unmuteButton"></button>
-</div>
-<script>
-  unmuteButton.addEventListener('click', function() {
-    audio.muted = false;
-    audio.volume = 0.2;
-    audio.src = 'https://soundbible.com/mp3/Airhorn-SoundBible.com-975027544.mp3';
-    audio.play();
-  });
 </script>

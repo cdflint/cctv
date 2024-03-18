@@ -1,6 +1,7 @@
 <script>
   var loc = window.location.toString(),
-      audio = document.getElementById('audio');
+      audio = document.getElementById('audio'),
+      button = document.getElementById('unmuteButton');
 
   var queryString = window.location.search;
   var urlParams = new URLSearchParams(queryString);
@@ -20,7 +21,7 @@
     console.log('Alert Triggered');
   };
 
-  unmuteButton.addEventListener('click', function() {
+  button.addEventListener('click', function() {
     video.muted = false;
   });
 </script>

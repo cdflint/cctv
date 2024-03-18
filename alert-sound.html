@@ -10,13 +10,13 @@
   var sts = urlParams.get('sts');
 
   // One-liner to resume playback when user interacted with the page.
-  document.querySelector(button).addEventListener('click', function() {
+  button.addEventListener('click', function() {
     context.resume().then(() => {
       console.log('Playback resumed successfully');
     });
   });
 
-  document.getElementById('unmuteButton').dispatchEvent(new MouseEvent('click')); 
+  button.dispatchEvent(new MouseEvent('click')); 
 
   function playSound(url) {
     console.log('Playing Sound');

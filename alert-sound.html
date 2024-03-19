@@ -33,25 +33,19 @@
   unmuteButton.addEventListener('click', function() {
     audio.muted = false;
     audio.volume = 0.2;
-    //audio.src = 'https://soundbible.com/mp3/Airhorn-SoundBible.com-975027544.mp3';
-    //audio.play();
   });
 
   function playSound(url) {
     console.log('Playing Sound');
     const audio = new Audio(url);
-    //audio.muted = false; // without this line it's not working although I have "muted" in HTML
     audio.play();
   }
 
   if (sts == 'Alert') {
-    button.dispatchEvent(new MouseEvent('click'));
+    //button.dispatchEvent(new MouseEvent('click'));
     playSound(url);
     console.log('Alert Triggered');
   };
 
-  window.addEventListener('load', function() {
-    button.dispatchEvent(new MouseEvent('click'));
-  });
 
 </script>
